@@ -6,7 +6,7 @@
 #include "nimconfig.h"
 #if defined(CONFIG_BT_NIMBLE_ROLE_PERIPHERAL)
 
-#include <NimBLEServer.h>
+#include "NimBLEServer.h"
 #include "NimBLECharacteristic.h"
 
 class BleConnectionStatus : public NimBLEServerCallbacks
