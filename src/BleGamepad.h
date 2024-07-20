@@ -11,6 +11,9 @@
 #include "NimBLECharacteristic.h"
 #include "BleGamepadConfiguration.h"
 
+#define lowByte(w) ((w) & 0xff)
+#define highByte(w) ((w) >> 8)
+
 class BleGamepad
 {
 private:

@@ -16,6 +16,17 @@ public:
     bool connected = false;
     void onConnect(NimBLEServer *pServer, ble_gap_conn_desc* desc);
     void onDisconnect(NimBLEServer *pServer);
+
+    void onConnect(NimBLEServer* pServer, NimBLEConnInfo& connInfo);
+    void onConnect(NimBLEServer* pServer, NimBLEConnInfo& connInfo, std::string& name);
+    void onDisconnect(NimBLEServer* pServer, NimBLEConnInfo& connInfo, int reason);
+    void onMTUChange(uint16_t MTU, NimBLEConnInfo& connInfo);
+    uint32_t onPassKeyDisplay();
+    void onConfirmPIN(const NimBLEConnInfo& connInfo, uint32_t pin);
+    void onAuthenticationComplete(const NimBLEConnInfo& connInfo);
+    void onAuthenticationComplete(const NimBLEConnInfo& connInfo, const std::string& name);
+    void onIdentity(const NimBLEConnInfo& connInfo);
+
     NimBLECharacteristic *inputGamepad;
 };
 
