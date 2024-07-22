@@ -17,15 +17,15 @@ public:
     void onConnect(NimBLEServer *pServer, ble_gap_conn_desc* desc);
     void onDisconnect(NimBLEServer *pServer);
 
-    void onConnect(NimBLEServer* pServer, NimBLEConnInfo& connInfo);
-    void onConnect(NimBLEServer* pServer, NimBLEConnInfo& connInfo, std::string& name);
-    void onDisconnect(NimBLEServer* pServer, NimBLEConnInfo& connInfo, int reason);
-    void onMTUChange(uint16_t MTU, NimBLEConnInfo& connInfo);
-    uint32_t onPassKeyDisplay();
-    void onConfirmPIN(const NimBLEConnInfo& connInfo, uint32_t pin);
-    void onAuthenticationComplete(const NimBLEConnInfo& connInfo);
-    void onAuthenticationComplete(const NimBLEConnInfo& connInfo, const std::string& name);
-    void onIdentity(const NimBLEConnInfo& connInfo);
+    void onConnect(NimBLEServer* pServer, NimBLEConnInfo& connInfo) override;
+    void onConnect(NimBLEServer* pServer, NimBLEConnInfo& connInfo, std::string& name) override;
+    void onDisconnect(NimBLEServer* pServer, NimBLEConnInfo& connInfo, int reason) override;
+    void onMTUChange(uint16_t MTU, NimBLEConnInfo& connInfo) override;
+    uint32_t onPassKeyDisplay() override;
+    void onConfirmPIN(const NimBLEConnInfo& connInfo, uint32_t pin) override;
+    void onAuthenticationComplete(const NimBLEConnInfo& connInfo) override;
+    void onAuthenticationComplete(const NimBLEConnInfo& connInfo, const std::string& name) override;
+    void onIdentity(const NimBLEConnInfo& connInfo) override;
 
     NimBLECharacteristic *inputGamepad;
 };
